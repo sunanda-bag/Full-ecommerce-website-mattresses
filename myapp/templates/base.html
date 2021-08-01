@@ -1,0 +1,274 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="assets/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
+    rel="stylesheet">
+
+  <title>PHPJabbers.com | Free Online Store Website Template</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Additional CSS Files -->
+  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+
+
+  	<!--font-awesome.min.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+
+	<!--linear icon css-->
+	<link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}/">
+
+	<!--animate.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+
+	<!--owl.carousel.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+
+	<!--bootstrap.min.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+	<!-- bootsnav -->
+	<link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+
+	<!--style.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+
+	<!--responsive.css-->
+	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+  <style>
+    .banner-item-01{
+    background-image: url( /assets/images/slider-image-2-1920x600.jpg  );
+    }
+    .banner-item-02{
+    background-image: url( /images/home_app/61bdrvFggaL._AC_UL320_.jpg  );
+    }
+    .banner-item-03{
+    background-image: url( "{% static 'assets/images/slider-image-2-1920x600.jpg' %}"   );
+    }
+
+    .product-item img{
+      width: 100%;
+      height: 210px;
+    }
+  </style>
+<style>
+  .product-details .product-links {
+    margin-top: 15px;
+  }
+
+  .product-details .product-links li {
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .product-details .product-links li+li {
+    margin-left: 10px;
+  }
+</style>
+
+{% block css %}
+  
+{% endblock css %}
+</head>
+
+<body>
+
+  <!-- ***** Preloader Start ***** -->
+  <!-- <div id="preloader">
+    <div class="jumper">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div> -->
+  <!-- ***** Preloader End ***** -->
+
+  <!-- Header -->
+
+
+
+  <header class="">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="/">
+          <h2>Online Store <em>Website</em></h2>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
+
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
+                aria-expanded="false">Categories</a>
+
+              <div class="dropdown-menu">
+                {% for category in categories %}
+                <a class="dropdown-item" href="/category-product-list/{{category.id}}">{{category.title}}</a>
+                {% endfor %}
+              </div>
+            </li>
+
+
+            
+
+
+            <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
+
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+
+{% block content %}
+    
+{% endblock content %}
+
+    <!-- FOOTER -->
+    <footer id="footer">
+      <!-- top footer -->
+      <div class="section">
+          <!-- container -->
+          <div class="container">
+              <!-- row -->
+              <div class="row">
+                  <div class="col-md-4 col-xs-6">
+                      <div class="footer">
+                          <h3 class="footer-title">Contact Us</h3>
+
+                          <ul class="footer-links">
+                              <li><a href="#"><i class="fa fa-map-marker"></i>Montreal, Canada</a></li>
+                              <li><a href="#"><i class="fa fa-phone"></i>+1 1234 567 890</a></li>
+                              <li><a href="#"><i class="fa fa-envelope-o"></i>company.@gmail.com</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+                  <div class="col-md-4 col-xs-6">
+                      <div class="footer">
+                          <h3 class="footer-title">Categories</h3>
+                          <ul class="footer-links">
+                            {% for category in categories %}
+                              <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
+                              {% endfor %}
+                              
+                          </ul>
+                      </div>
+                  </div>
+
+
+                  <div class="clearfix visible-xs"></div>
+
+                  <div class="col-md-4 col-xs-6">
+                      <div class="footer">
+                          <h3 class="footer-title">Information</h3>
+                          <ul class="footer-links">
+                              <!-- <li><a href="#">About Us</a></li> -->
+                              <li><a href="/contact">Contact Us</a></li>
+                              <li><a href="/about">About Us</a></li>
+                              <li><a href="#">Privacy Policy</a></li>
+                              <li><a href="#">Orders and Returns</a></li>
+                              <li><a href="#">Terms & Conditions</a></li>
+                          </ul>
+                      </div>
+                  </div>
+
+
+              </div>
+              <!-- /row -->
+          </div>
+          <!-- /container -->
+      </div>
+      <!-- /top footer -->
+
+
+  </footer>
+  <!-- /FOOTER -->
+
+  
+  <!-- <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="inner-content">
+            <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer> -->
+
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'vendor/jquery/jquery.min.js' %}vendor/jquery/jquery.min.js"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+
+
+
+
+
+  <!-- Include all js compiled plugins (below), or include individual files as needed -->
+
+	<script src="{% static 'assets/js/jquery.js' %}"></script>
+
+	<!--modernizr.min.js-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+	<!--bootstrap.min.js-->
+	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+
+	<!-- bootsnav js -->
+	<script src="{% static 'assets/js/bootsnav.js' %}"></script>
+
+	<!--owl.carousel.js-->
+	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+
+  
+  <!-- Additional Scripts -->
+  <script src="{% static 'assets/js/custom.js' %}"></script>
+  <script src="{% static 'assets/js/owl.js' %}"></script>
+  
+
+  <script src="{% static 'assets/js/slick.min.js' %}"></script>
+
+
+
+	<!--Custom JS-->
+	<script src="{% static 'js/custom_demo.js' %}/"></script>
+
+ <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

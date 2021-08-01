@@ -1,0 +1,161 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Page Content -->
+<div class="page-heading about-heading header-text"
+  style="background-image: url(assets/images/heading-6-1920x500.jpg);">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-content">
+          <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
+          <h2>Products</h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+  <!-- container -->
+  <div class="container">
+    <!-- row -->
+    <div class="row">
+      <div class="col-md-12">
+
+        <ul class="breadcrumb-tree">
+          <li><a href="/">Home</a></li>
+          <li><a href="#">{{category_with_id}}</a></li>
+
+        </ul>
+
+      </div>
+    </div>
+    <!-- /row -->
+  </div>
+  <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+
+<div class="products">
+  <div class="container-fluid">
+    <div class="row">
+      {% include 'sidebar_filter.html' %}
+
+      <div class="col-md-9">
+        {% for product in cat_prods %}
+
+        <div class="col-md-4">
+          <div class="product-item  product-details ">
+            <a href="/products/{{product.id}}"><img class="img-fluid img-thumbnail" src="{{product.imageURL}}"
+                alt="{{product.title}}"></a>
+            <div class="down-content product-body text-center py-3">
+              <a href="/products/{{product.id}}">
+                <p class="product-category text-center mb-2">{{product.category}}</p>
+                <h3 class="product-name text-center"><a href="/products/{{product.id}}">{{product.title}}</a></h3>
+              </a>
+              <h5 class="product-price"><small><del class="product-old-price">{{product.price}}</del></small>
+                {{product.discount_price|floatformat:2}}</h5>
+
+              <div class="add-to-cart">
+                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart m-2"></i>add to cart</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+
+
+        {% endfor %}
+
+      </div>
+    </div>
+
+    <div class="col-md-12">
+      <ul class="pages">
+        <li><a href="#">1</a></li>
+        <li class="active"><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#"><i class="fa fa-angle-double-right"></i></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+</div>
+
+<br>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+  aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Book Now</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="contact-form">
+          <form action="#" id="contact">
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Pick-up location" required="">
+                </fieldset>
+              </div>
+
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Return location" required="">
+                </fieldset>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Pick-up date/time" required="">
+                </fieldset>
+              </div>
+
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Return date/time" required="">
+                </fieldset>
+              </div>
+            </div>
+            <input type="text" class="form-control" placeholder="Enter full name" required="">
+
+            <div class="row">
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Enter email address" required="">
+                </fieldset>
+              </div>
+
+              <div class="col-md-6">
+                <fieldset>
+                  <input type="text" class="form-control" placeholder="Enter phone" required="">
+                </fieldset>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+        <button type="button" class="btn btn-primary">Book Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{% endblock content %}

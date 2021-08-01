@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-1jw1=0d3m5ktexx6(0nb1)1b$8%33k@o*9f*5qt8bajvn!#1zu
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # DEBUG = config('DEBUG', default=False, cast=bool)
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['mattresses.herokuapp.com','127.0.0.1',]
 

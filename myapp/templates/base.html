@@ -15,76 +15,97 @@
   <title>PHPJabbers.com | Free Online Store Website Template</title>
 
   <!-- Bootstrap core CSS -->
-  <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <!-- <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"> -->
 
   <!-- Additional CSS Files -->
-  <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}">
+  <!-- <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}"> -->
+  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/nouislider.min.css' %}">
 
 
-  	<!--font-awesome.min.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'assets/css/custom.css' %}" />
 
-	<!--linear icon css-->
-	<link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}/">
+  <!--font-awesome.min.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
 
-	<!--animate.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
+  <!--linear icon css-->
+  <link rel="stylesheet" href="{% static 'assets/css/linearicons.css' %}/">
 
-	<!--owl.carousel.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
-	<link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
+  <!--animate.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/animate.css' %}">
 
-	<!--bootstrap.min.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+  <!--owl.carousel.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/owl.theme.default.min.css' %}">
 
-	<!-- bootsnav -->
-	<link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
+  <!--bootstrap.min.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
 
-	<!--style.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-	<link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
-	<link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+  <!-- bootsnav -->
+  <link rel="stylesheet" href="{% static 'assets/css/bootsnav.css' %}">
 
-	<!--responsive.css-->
-	<link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+  <!-- bootstrap  -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+    integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+
+
+  <!--style.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/slick.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/slick-theme.css' %}">
+
+  <!--responsive.css-->
+  <link rel="stylesheet" href="{% static 'assets/css/responsive.css' %}">
+
+
+  <link rel="stylesheet" href="{% static 'assets/css/checkout.css' %}">
 
   <style>
-    .banner-item-01{
-    background-image: url( /assets/images/slider-image-2-1920x600.jpg  );
-    }
-    .banner-item-02{
-    background-image: url( /images/home_app/61bdrvFggaL._AC_UL320_.jpg  );
-    }
-    .banner-item-03{
-    background-image: url( "{% static 'assets/images/slider-image-2-1920x600.jpg' %}"   );
+    .banner-item-01 {
+      background-image: url(/assets/images/slider-image-2-1920x600.jpg  );
     }
 
-    .product-item img{
+    .banner-item-02 {
+      background-image: url(/images/home_app/61bdrvFggaL._AC_UL320_.jpg  );
+    }
+
+    .banner-item-03 {
+      background-image: url("{% static 'assets/images/slider-image-2-1920x600.jpg' %}");
+    }
+
+    .product-item img {
       width: 100%;
       height: 210px;
     }
   </style>
-<style>
-  .product-details .product-links {
-    margin-top: 15px;
-  }
+  <style>
+    .product-details .product-links {
+      margin-top: 10px;
+    }
 
-  .product-details .product-links li {
-    display: inline-block;
-    text-transform: uppercase;
-    font-size: 12px;
-  }
+    .product-details .product-links li {
+      display: inline-block;
+      text-transform: uppercase;
+      font-size: 12px;
+    }
 
-  .product-details .product-links li+li {
-    margin-left: 10px;
-  }
-</style>
+    .product-details .product-links li+li {
+      margin-left: 10px;
+    }
+  </style>
 
-{% block css %}
-  
-{% endblock css %}
+  {% block css %}
+
+  {% endblock css %}
 </head>
 
 <body>
@@ -102,8 +123,185 @@
   <!-- Header -->
 
 
+  <!-- HEADER -->
+  <header>
+    <!-- TOP HEADER -->
+    <div id="top-header">
+      <div class="container">
+        <ul class="header-links pull-left">
+          <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
+          <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
+          <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
+        </ul>
+        <ul class="header-links pull-right">
+          <!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
+          {% if user.is_authenticated %}
+          <li><a href="{% url 'logout' %}"><i class="fa fa-user-o"></i> Logout</a></li>
+          <li><a href="{% url 'my_dashboard' %}"><i class="fa fa-user-o"></i> My Dashboard</a></li>
+          {% else %}
+          <li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> Login</a></li>
 
-  <header class="">
+          <li><a href="{% url 'signup' %}"><i class="fa fa-user-o"></i> Sign Up</a></li>
+          {% endif %}
+        </ul>
+
+
+      </div>
+    </div>
+    <!-- /TOP HEADER -->
+
+    <!-- MAIN HEADER -->
+    <div id="header">
+      <!-- container -->
+      <div class="container-fluid">
+        <!-- row -->
+        <div class="row">
+          <!-- LOGO -->
+          <div class="col-md-4 ml-4 pl-4 ">
+
+            <div class="header-logo " style="color: white;">
+              <div class="col-sm-12 col-lg-12 logo-head ml-4">
+                <a style="font-size: 3.4rem; " href="/" class="navbar-brand h1">Royal Sleep Mattresses</a>
+              </div>
+            </div>
+
+          </div>
+          <!-- /LOGO -->
+
+          <!-- SEARCH BAR -->
+          <div class="col-md-5">
+            <div class="header-search">
+              <form class="form" action="/search" style="font-size: medium;">
+                <!-- <select class="input-select">
+        <option value="0">All Categories</option>
+        <option value="1">Category 01</option>
+        <option value="1">Category 02</option>
+      </select> -->
+                <input name="q" class="input input-select" placeholder="Search here...">
+                <button type="submit" class="search-btn">Search</button>
+              </form>
+            </div>
+          </div>
+          <!-- /SEARCH BAR -->
+
+          <!-- ACCOUNT -->
+          <div class="col-md-3 clearfix">
+            <div class="header-ctn">
+              <!-- Wishlist -->
+              <div>
+                <a href="#">
+                  <i class="fa fa-heart-o"></i>
+                  <span>Your Wishlist</span>
+                  <div class="qty">2</div>
+                </a>
+              </div>
+              <!-- /Wishlist -->
+
+              <!-- Cart -->
+              <div class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
+                  <i class="fa fa-shopping-cart"></i>
+                  <span>Your Cart</span>
+                  <div class="qty"><span class="cart-list">{{request.session.cartdata|length}}</span></div>
+                </a>
+                <div class="cart-dropdown">
+                  <div class="cart-list">
+                    <div class="product-widget">
+                      <div class="product-img">
+                        <img src="./img/product01.png" alt="">
+                      </div>
+                      <div class="product-body">
+                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                        <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                      </div>
+                      <button class="delete"><i class="fa fa-close"></i></button>
+                    </div>
+
+                    <div class="product-widget">
+                      <div class="product-img">
+                        <img src="./img/product02.png" alt="">
+                      </div>
+                      <div class="product-body">
+                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
+                        <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
+                      </div>
+                      <button class="delete"><i class="fa fa-close"></i></button>
+                    </div>
+                  </div>
+                  <div class="cart-summary">
+                    <small>3 Item(s) selected</small>
+                    <h5>SUBTOTAL: $2940.00</h5>
+                  </div>
+                  <div class="cart-btns">
+                    <a href="/cart">View Cart</a>
+                    <a href="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
+                  </div>
+                </div>
+              </div>
+              <!-- /Cart -->
+
+              <!-- Menu Toogle -->
+              <div class="menu-toggle">
+                <a href="#">
+                  <i class="fa fa-bars"></i>
+                  <span>Menu</span>
+                </a>
+              </div>
+              <!-- /Menu Toogle -->
+            </div>
+          </div>
+          <!-- /ACCOUNT -->
+        </div>
+        <!-- row -->
+      </div>
+      <!-- container -->
+    </div>
+    <!-- /MAIN HEADER -->
+  </header>
+  <!-- /HEADER -->
+
+  <!-- NAVIGATION -->
+  <nav id="navigation" class="navbar navbar-default" style="margin-bottom:2px">
+    <!-- container -->
+    <div class="container">
+      <!-- responsive-nav -->
+      <div id="responsive-nav">
+        <!-- NAV -->
+        <ul class="main-nav nav navbar-nav">
+          <li class=""><a href="/">Home</a></li>
+
+          <li><a href="/products">Products</a></li>
+
+
+
+          <li class="dropdown">
+            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+              aria-expanded="false">Categories <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+
+              {% for category in categories %}
+              <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
+              {% endfor %}
+
+            </ul>
+          </li>
+
+
+          <li><a href="/checkout">Checkout</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <!-- <li><a href="#">Accessories</a></li> -->
+        </ul>
+        <!-- /NAV -->
+      </div>
+      <!-- /responsive-nav -->
+    </div>
+    <!-- /container -->
+  </nav>
+  <!-- /NAVIGATION -->
+
+
+  <!-- <header class="">
     <nav class="navbar navbar-expand-lg">
       <div class="container">
         <a class="navbar-brand" href="/">
@@ -134,10 +332,6 @@
               </div>
             </li>
 
-
-            
-
-
             <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
 
             <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
@@ -145,75 +339,75 @@
         </div>
       </div>
     </nav>
-  </header>
+  </header> -->
 
 
-{% block content %}
-    
-{% endblock content %}
+  {% block content %}
 
-    <!-- FOOTER -->
-    <footer id="footer">
-      <!-- top footer -->
-      <div class="section">
-          <!-- container -->
-          <div class="container">
-              <!-- row -->
-              <div class="row">
-                  <div class="col-md-4 col-xs-6">
-                      <div class="footer">
-                          <h3 class="footer-title">Contact Us</h3>
+  {% endblock content %}
 
-                          <ul class="footer-links">
-                              <li><a href="#"><i class="fa fa-map-marker"></i>Montreal, Canada</a></li>
-                              <li><a href="#"><i class="fa fa-phone"></i>+1 1234 567 890</a></li>
-                              <li><a href="#"><i class="fa fa-envelope-o"></i>company.@gmail.com</a></li>
-                          </ul>
-                      </div>
-                  </div>
+  <!-- FOOTER -->
+  <footer id="footer">
+    <!-- top footer -->
+    <div class="section">
+      <!-- container -->
+      <div class="container">
+        <!-- row -->
+        <div class="row">
+          <div class="col-md-4 col-xs-6">
+            <div class="footer">
+              <h3 class="footer-title">Contact Us</h3>
 
-                  <div class="col-md-4 col-xs-6">
-                      <div class="footer">
-                          <h3 class="footer-title">Categories</h3>
-                          <ul class="footer-links">
-                            {% for category in categories %}
-                              <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
-                              {% endfor %}
-                              
-                          </ul>
-                      </div>
-                  </div>
-
-
-                  <div class="clearfix visible-xs"></div>
-
-                  <div class="col-md-4 col-xs-6">
-                      <div class="footer">
-                          <h3 class="footer-title">Information</h3>
-                          <ul class="footer-links">
-                              <!-- <li><a href="#">About Us</a></li> -->
-                              <li><a href="/contact">Contact Us</a></li>
-                              <li><a href="/about">About Us</a></li>
-                              <li><a href="#">Privacy Policy</a></li>
-                              <li><a href="#">Orders and Returns</a></li>
-                              <li><a href="#">Terms & Conditions</a></li>
-                          </ul>
-                      </div>
-                  </div>
-
-
-              </div>
-              <!-- /row -->
+              <ul class="footer-links">
+                <li><a href="#"><i class="fa fa-map-marker"></i>Montreal, Canada</a></li>
+                <li><a href="#"><i class="fa fa-phone"></i>+1 1234 567 890</a></li>
+                <li><a href="#"><i class="fa fa-envelope-o"></i>company.@gmail.com</a></li>
+              </ul>
+            </div>
           </div>
-          <!-- /container -->
+
+          <div class="col-md-4 col-xs-6">
+            <div class="footer">
+              <h3 class="footer-title">Categories</h3>
+              <ul class="footer-links">
+                {% for category in categories %}
+                <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
+                {% endfor %}
+
+              </ul>
+            </div>
+          </div>
+
+
+          <div class="clearfix visible-xs"></div>
+
+          <div class="col-md-4 col-xs-6">
+            <div class="footer">
+              <h3 class="footer-title">Information</h3>
+              <ul class="footer-links">
+                <!-- <li><a href="#">About Us</a></li> -->
+                <li><a href="/contact">Contact Us</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Orders and Returns</a></li>
+                <li><a href="#">Terms & Conditions</a></li>
+              </ul>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- /row -->
       </div>
-      <!-- /top footer -->
+      <!-- /container -->
+    </div>
+    <!-- /top footer -->
 
 
   </footer>
   <!-- /FOOTER -->
 
-  
+
   <!-- <footer>
     <div class="container">
       <div class="row">
@@ -228,47 +422,102 @@
 
 
   <!-- Bootstrap core JavaScript -->
-  <script src="{% static 'vendor/jquery/jquery.min.js' %}vendor/jquery/jquery.min.js"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <!-- <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
+  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script> -->
 
+  <!-- bootstrap  -->
 
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+    crossorigin="anonymous"></script>
 
 
 
   <!-- Include all js compiled plugins (below), or include individual files as needed -->
 
-	<script src="{% static 'assets/js/jquery.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.js' %}"></script>
+  <script src="{% static 'assets/js/jquery.zoom.min.js' %}"></script>
 
-	<!--modernizr.min.js-->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+  <!--modernizr.min.js-->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
 
-	<!--bootstrap.min.js-->
-	<script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+  <!--bootstrap.min.js-->
+  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
 
-	<!-- bootsnav js -->
-	<script src="{% static 'assets/js/bootsnav.js' %}"></script>
+  <!-- bootsnav js -->
+  <script src="{% static 'assets/js/bootsnav.js' %}"></script>
 
-	<!--owl.carousel.js-->
-	<script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-
-
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+  <!--owl.carousel.js-->
+  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
 
 
-  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+  <script>
+    var maxPrice = '{{minMaxPrice.discount_price__max}}'
+    var minPrice = '{{minMaxPrice.discount_price__min}}'
+  </script>
+
   <!-- Additional Scripts -->
   <script src="{% static 'assets/js/custom.js' %}"></script>
   <script src="{% static 'assets/js/owl.js' %}"></script>
-  
+
 
   <script src="{% static 'assets/js/slick.min.js' %}"></script>
 
 
 
-	<!--Custom JS-->
-	<script src="{% static 'js/custom_demo.js' %}/"></script>
+  <!--Custom JS-->
+  <script src="{% static 'js/custom_demo.js' %}/"></script>
 
- <script src="{% static 'assets/js/main.js' %}"></script>
+  <script src="{% static 'assets/js/product-filter.js' %}"></script>
+  <script src="{% static 'assets/js/feather.min.js' %}"></script>
+
+
+
+
+  <script src="{% static 'assets/js/nouislider.min.js' %}"></script>
+
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+  <!-- cart-js -->
+  <script src="{% static 'assets/js/minicart.js' %}"></script>
+  <script>
+    toys.render();
+
+    toys.cart.on('toys_checkout', function (evt) {
+      var items, len, i;
+
+      if (this.subtotal() > 0) {
+        items = this.items();
+
+        for (i = 0, len = items.length; i < len; i++) { }
+      }
+    });
+  </script>
+  <!--// cart-js -->
+
+  <!--quantity-->
+  <script>
+    $('.value-plus').on('click', function () {
+      var divUpd = $(this).parent().find('.value'),
+        newVal = parseInt(divUpd.text(), 10) + 1;
+      divUpd.text(newVal);
+    });
+
+    $('.value-minus').on('click', function () {
+      var divUpd = $(this).parent().find('.value'),
+        newVal = parseInt(divUpd.text(), 10) - 1;
+      if (newVal >= 1) divUpd.text(newVal);
+    });
+  </script>
+  <!--quantity-->
+
+  {% block js %}
+
+  {% endblock js %}
+
 </body>
 
 </html>

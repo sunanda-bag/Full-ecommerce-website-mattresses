@@ -39,6 +39,8 @@ ALLOWED_HOSTS = ['mattresses.herokuapp.com','127.0.0.1',]
 # Application definition
 
 INSTALLED_APPS = [
+    'jet.dashboard',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +48,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'myapp',
+    'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
@@ -141,9 +144,13 @@ MEDIA_URL = '/images/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
+LOGIN_REDIRECT_URL='home'
+LOGOUT_REDIRECT_URL='login'
+
+
 os.makedirs(STATIC_ROOT, exist_ok=True)
 
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
@@ -162,6 +169,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 
-django_heroku.settings(locals())
+PAYPAL_RECEIVER_EMAIL = 'testerwebsite007@gmail.com'
+PAYPAL_TEST = True
 
-# django_on_heroku.settings(locals())
+
+
+JET_SIDE_MENU_COMPACT = True

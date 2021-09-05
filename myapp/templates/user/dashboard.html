@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+<!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+        <!-- row -->
+        <div class="row">
+            <div class="col-md-12">
+
+                <ul class="breadcrumb-tree">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="{% url 'my_dashboard' %}">My Dashboard</a></li>
+                </ul>
+
+            </div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+</div>
+<!-- /BREADCRUMB -->
+
+
+<div class="products product-details">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3">
+                {% include 'user/user-sidebar.html' %}
+            </div>
+            <div class="col-md-9">
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    
+
+
+
+    {% endblock content %}
+
+    {% block js %}
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="text/javascript">
+        const labels = {{ monthNumber| safe}};
+        const data = {
+            labels: labels,
+            datasets: [{
+                label: 'Orders By Month',
+                backgroundColor: 'rgb(255, 99, 132)',
+                borderColor: 'rgb(255, 99, 132)',
+                data: {{ totalOrders }},
+	  }]
+	};
+
+        const config = {
+            type: 'bar',
+            data,
+            options: {}
+        };
+
+        var myChart = new Chart(
+            document.getElementById('myChart'),
+            config
+        );
+
+    </script>
+    {% endblock js %}

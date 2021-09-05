@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+  
+
+
+   <!-- BREADCRUMB -->
+<div id="breadcrumb" class="section">
+    <!-- container -->
+    <div class="container">
+      <!-- row -->
+      <div class="row">
+        <div class="col-md-12">
+         
+          <ul class="breadcrumb-tree">
+            <li><a href="#">Sign Up</a></li>
+            <!-- <li><a href="#">Contacts</a></li> -->
+            
+          </ul>
+  
+        </div>
+      </div>
+      <!-- /row -->
+    </div>
+    <!-- /container -->
+  </div>
+  <!-- /BREADCRUMB -->
+
+
+
+  <main class="container my-4">
+	<!-- Featured Products -->
+	<h3 class="my-4 border-bottom pb-1">Sign Up</h3>
+	<table class="table table-bordered">
+		<form method="POST">
+			{% csrf_token %}
+			{{form.as_table}}
+			<tr>
+				<td colspan="2">
+					<input type="submit" value="Register" class="btn btn-primary" />
+				</td>
+			</tr>
+		</form>
+	</table>
+	
+</main>
+
+    {% endblock content %}

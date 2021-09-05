@@ -1,0 +1,121 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+
+{% endblock css %}
+{% block js %}
+
+
+<!--closed-->
+<!-- <script>
+    $(document).ready(function (c) {
+        $('.close1').on('click', function (c) {
+            $('.rem1').fadeOut('slow', function (c) {
+                $('.rem1').remove();
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function (c) {
+        $('.close2').on('click', function (c) {
+            $('.rem2').fadeOut('slow', function (c) {
+                $('.rem2').remove();
+            });
+        });
+    });
+</script>
+<script>
+    $(document).ready(function (c) {
+        $('.close3').on('click', function (c) {
+            $('.rem3').fadeOut('slow', function (c) {
+                $('.rem3').remove();
+            });
+        });
+    });
+</script> -->
+<!--//closed-->
+
+{% endblock js %}
+{% block content %}
+
+
+<section class="checkout py-lg-4 py-md-3 py-sm-3 py-3">
+    <div class="container py-lg-5 py-md-4 py-sm-4 py-3">
+        <div class="shop_inner_inf">
+            <div class="privacy about">
+                <h3> <span>Cart</span></h3>
+                <div class="checkout-right" id="cartList">
+                    <h4>Your shopping cart contains: <span>{{totalitems}} Products</span></h4>
+                    <table class="timetable_sub">
+                        <thead>
+                            <tr>
+                                <th>S No.</th>
+                                <th>Product</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                
+                                <th>Total Price</th>
+                                <th>Remove</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            {% for product_id,item in cart_data.items %}
+                            <tr class="rem1">
+                                <td class="invert">{{forloop.counter}}</td>
+                                <td class="invert-image"><a href="/products/{{product_id}}"><img src="{{item.image}}"
+                                            alt=" " class="img-responsive">
+                                        <p>{{item.title}}</p>
+                                        </a></td>
+                                <td class="invert">$ {{item.discountprice|floatformat:2}}</td>
+                                
+                                <td class="invert">
+                                    <div class="quantity update-item" data-item="{{product_id}}">
+                                        <div class="quantity-select">
+                                            <div class="entry value-minus " >&nbsp;</div>
+                                            <div class="entry value product-qty-{{product_id}}" ><span>{{item.qty}}</span></div>
+                                            <div class="entry value-plus " >&nbsp;</div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <!-- <td class="invert">{{item.title}}</td> -->
+                                <td class="invert">$ {% widthratio item.discountprice 1 item.qty %}</td>
+                                <td class="invert">
+                                    <div class="rem">
+                                        <div class="close1 delete-item " data-item="{{product_id}}"> </div>
+                                    </div>
+                                </td>
+                            </tr>
+                            {% endfor %}
+
+                        </tbody>
+                        <tfoot>
+                            <tr >
+                                <td colspan="4" style="color: black;" ><strong>Sub Total</strong> </td>
+                               
+                                <td colspan="2" style="color: black;">$ {{total_amt|floatformat:2}}</td>
+                                
+                            </tr>
+                            {% if totalitems %}
+                            <tr>
+                                <td colspan="7" align="right" style="text-align: right;">
+                                    <a href="/checkout" class="btn btn-primary btn-sm">Checkout <i
+                                            class="fa fa-long-arrow-alt-right"></i></a>
+                                </td>
+                            </tr>
+                            {% endif %}
+                        </tfoot>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+        <!-- //top products -->
+    </div>
+</section>
+
+
+
+
+{% endblock %}

@@ -4,19 +4,19 @@
 {% block content %}
 
 <!-- Page Content -->
-<div class="page-heading about-heading header-text"
+<!-- <div class="page-heading about-heading header-text"
   style="background-image: url(assets/images/heading-6-1920x500.jpg);">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="text-content">
-          <!-- <h4>Lorem ipsum dolor sit amet</h4> -->
+          <h4>Lorem ipsum dolor sit amet</h4>
           <h2>Products</h2>
         </div>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
 <!-- BREADCRUMB -->
 <div id="breadcrumb" class="section">
@@ -45,10 +45,11 @@
     <div class="row">
       {% include 'sidebar_filter.html' %}
 
-      <div class="col-md-9">
+      <div class="col-md-10">
+        <div class="row">
         {% for product in cat_prods %}
 
-        <div class="col-md-4">
+        <div class="col-md-3">
           <div class="product-item  product-details ">
             <a href="/products/{{product.id}}"><img class="img-fluid img-thumbnail" src="{{product.imageURL}}"
                 alt="{{product.title}}"></a>
@@ -57,12 +58,41 @@
                 <p class="product-category text-center mb-2">{{product.category}}</p>
                 <h3 class="product-name text-center"><a href="/products/{{product.id}}">{{product.title}}</a></h3>
               </a>
-              <h5 class="product-price"><small><del class="product-old-price">{{product.price}}</del></small>
-                {{product.discount_price|floatformat:2}}</h5>
+              <h5 class="product-price"><small><del class="product-old-price">$ {{product.price}}</del></small>
+                $ {{product.discount_price|floatformat:2}}</h5>
 
-              <div class="add-to-cart">
-                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart m-2"></i>add to cart</button>
+                {% if user.is_authenticated %}
+              <div class="product-btns">
+                <button class="add-to-wishlist add-wishlist"><i class="fa fa-heart-o"></i><span
+                    ></span></button>
+                <button class="add-to-compare"><i class="fa fa-exchange"></i><span
+                    ></span></button>
+                <button class="quick-view"><i class="fa fa-eye"></i><span ></span></button>
               </div>
+              <br>
+              {% else %}
+
+              <div class="product-btns">
+                <button class="add-to-wishlist disabled"><i class="fa fa-heart-o"></i><span
+                    ></span></button>
+                <button class="add-to-compare disabled"><i class="fa fa-exchange"></i><span
+                    ></span></button>
+                <button class="quick-view disabled"><i class="fa fa-eye"></i><span ></span></button>
+              </div>
+              <br>
+              {% endif %}
+
+                <div class="add-to-cart">
+                  <input type="hidden" value="1" id="productQty" class="form-control product-qty-{{product.id}}">
+                  <input type="hidden" class="product-image-{{product.id}}" value="{{product.imageURL}}" />
+                  <input type="hidden" class="product-id-{{product.id}}" value="{{product.id}}" />
+                  <input type="hidden" class="product-title-{{product.id}}" value="{{product.title}}" />
+                  <input type="hidden" class="product-discountprice-{{product.id}}" value="{{product.discount_price}}" />
+                  <input type="hidden" class="product-actualprice-{{product.id}}" value="{{product.price}}" />
+                  
+                  <button class="add-to-cart-btn" data-index="{{product.id}}" type="button" id="addToCartBtn"><i
+                    class="fa fa-shopping-cart"></i> Add to cart</button>
+                </div>
 
             </div>
           </div>
@@ -71,7 +101,7 @@
 
 
         {% endfor %}
-
+      </div>
       </div>
     </div>
 

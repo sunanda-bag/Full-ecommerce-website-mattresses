@@ -1,1 +1,0 @@
-web: gunicorn ecom_jabbers.wsgi --log-file -

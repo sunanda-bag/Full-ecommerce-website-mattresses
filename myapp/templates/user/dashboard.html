@@ -52,7 +52,7 @@
     {% block js %}
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script type="text/javascript">
-        const labels = {{ monthNumber| safe}};
+        const labels = {{monthNumber|safe}};
         const data = {
             labels: labels,
             datasets: [{

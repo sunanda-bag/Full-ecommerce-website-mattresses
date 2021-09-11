@@ -14,11 +14,6 @@ from pathlib import Path
 import os
 
 
-import django_heroku
-# import django_on_heroku
-# import dj_database_url
-# from decouple import config
-
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -33,12 +28,13 @@ SECRET_KEY = 'django-insecure-1jw1=0d3m5ktexx6(0nb1)1b$8%33k@o*9f*5qt8bajvn!#1zu
 # DEBUG = config('DEBUG', default=False, cast=bool)
 DEBUG = True
 
-ALLOWED_HOSTS = ['mattresses.herokuapp.com','127.0.0.1',]
+ALLOWED_HOSTS = ['*','127.0.0.1',]
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'myapp',
     'jet.dashboard',
     'jet',
     'django.contrib.admin',
@@ -47,14 +43,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'myapp',
+    
     'paypal.standard.ipn',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
 
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -140,7 +135,6 @@ STATICFILES_DIRS = [
 
 
 MEDIA_URL = '/images/'
-
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 
 
@@ -149,7 +143,6 @@ LOGOUT_REDIRECT_URL='login'
 
 
 os.makedirs(STATIC_ROOT, exist_ok=True)
-
 
 
 # Default primary key field type
@@ -171,7 +164,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 PAYPAL_RECEIVER_EMAIL = 'testerwebsite007@gmail.com'
 PAYPAL_TEST = True
-
 
 
 JET_SIDE_MENU_COMPACT = True

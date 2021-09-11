@@ -285,15 +285,15 @@ def checkout(request):
             'cancel_return': 'http://{}{}'.format(host, reverse('payment_cancelled')),
         }
         form = PayPalPaymentsForm(initial=paypal_dict)
-        # address = UserAddressBook.objects.filter(
-        #     user=request.user, status=True).first()
+        address = UserAddressBook.objects.filter(
+            user=request.user, status=True).first()
 
         return render(request, 'checkout.html', {
                                                 'cart_data': request.session['cartdata'], 
                                                 'totalitems': len(request.session['cartdata']), 
                                                 'total_amt': total_amt, 
-                                                # 'form': form, 
-                                                # 'address': address,
+                                                'form': form, 
+                                                'address': address,
                                                   })
 
 
@@ -433,7 +433,7 @@ def update_address(request,id):
 			if 'status' in request.POST:
 				UserAddressBook.objects.update(status=False)
 			saveForm.save()
-			msg='Data has been saved'
+			msg='Address has been saved'
 	form=AddressBookForm(instance=address)
 	return render(request, 'user/update-address.html',{'form':form,'msg':msg})
 

@@ -5,24 +5,26 @@
 <head>
 
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1>
   <meta name="description" content="">
   <meta name="author" content="">
-  <link rel="icon" href="assets/images/favicon.ico">
-  <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap"
-    rel="stylesheet">
-
-  <title>PHPJabbers.com | Free Online Store Website Template</title>
+  <link rel="icon" href="{%static 'assets/images/favicon.ico' %}">
+  <!-- <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet"> -->
+  <link href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i" rel="stylesheet">
+  <title>Mattresses</title>
 
   <!-- Bootstrap core CSS -->
   <!-- <link href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet"> -->
-
+  <link rel="shortcut icon" type="image/icon" href="{%static 'assets/logo/favicon.png' %}"/>
   <!-- Additional CSS Files -->
   <!-- <link rel="stylesheet" href="{% static 'assets/css/fontawesome.css' %}"> -->
   <link rel="stylesheet" href="{% static 'assets/css/font-awesome.min.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'assets/css/style_1.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/owl.css' %}">
   <link rel="stylesheet" href="{% static 'assets/css/nouislider.min.css' %}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
   <link rel="stylesheet" type="text/css" href="{% static 'assets/css/custom.css' %}" />
@@ -68,7 +70,6 @@
 
 
   <link rel="stylesheet" href="{% static 'assets/css/checkout.css' %}">
-
   <style>
     .banner-item-01 {
       background-image: url(/assets/images/slider-image-2-1920x600.jpg  );
@@ -110,413 +111,243 @@
 
 <body>
 
-  <!-- ***** Preloader Start ***** -->
-  <!-- <div id="preloader">
-    <div class="jumper">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-  </div> -->
-  <!-- ***** Preloader End ***** -->
+ 
 
-  <!-- Header -->
-
-
-  <!-- HEADER -->
-  <header>
-    <!-- TOP HEADER -->
-    <div id="top-header">
-      <div class="container">
-        <ul class="header-links pull-left">
-          <li><a href="#"><i class="fa fa-phone"></i> +021-95-51-84</a></li>
-          <li><a href="#"><i class="fa fa-envelope-o"></i> email@email.com</a></li>
-          <li><a href="#"><i class="fa fa-map-marker"></i> 1734 Stonecoal Road</a></li>
-        </ul>
-        <ul class="header-links pull-right">
-          <!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
-          {% if user.is_authenticated %}
-          <li><a href="{% url 'logout' %}"><i class="fa fa-user-o"></i> Logout</a></li>
-          <li><a href="{% url 'my_dashboard' %}"><i class="fa fa-user-o"></i> My Dashboard</a></li>
-          {% else %}
-          <li><a href="{% url 'login' %}"><i class="fa fa-user-o"></i> Login</a></li>
-
-          <li><a href="{% url 'signup' %}"><i class="fa fa-user-o"></i> Sign Up</a></li>
-          {% endif %}
-        </ul>
-
-
-      </div>
-    </div>
-    <!-- /TOP HEADER -->
-
-    <!-- MAIN HEADER -->
-    <div id="header">
-      <!-- container -->
-      <div class="container-fluid">
-        <!-- row -->
-        <div class="row">
-          <!-- LOGO -->
-          <div class="col-md-4 ml-4 pl-4 ">
-
-            <div class="header-logo " style="color: white;">
-              <div class="col-sm-12 col-lg-12 logo-head ml-4">
-                <a style="font-size: 3.4rem; " href="/" class="navbar-brand h1">Royal Sleep Mattresses</a>
-              </div>
-            </div>
-
-          </div>
-          <!-- /LOGO -->
-
-          <!-- SEARCH BAR -->
-          <div class="col-md-5">
-            <div class="header-search">
-              <form class="form" action="/search" style="font-size: medium;">
-                <!-- <select class="input-select">
-        <option value="0">All Categories</option>
-        <option value="1">Category 01</option>
-        <option value="1">Category 02</option>
-      </select> -->
-                <input name="q" class="input input-select" placeholder="Search here...">
-                <button type="submit" class="search-btn">Search</button>
-              </form>
-            </div>
-          </div>
-          <!-- /SEARCH BAR -->
-
-          <!-- ACCOUNT -->
-          <div class="col-md-3 clearfix">
-            <div class="header-ctn">
-              <!-- Wishlist -->
-              <div>
-                <a href="#">
-                  <i class="fa fa-heart-o"></i>
-                  <span>Your Wishlist</span>
-                  <div class="qty">2</div>
-                </a>
-              </div>
-              <!-- /Wishlist -->
-
-              <!-- Cart -->
-              <div class="dropdown">
-                <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
-                  <i class="fa fa-shopping-cart"></i>
-                  <span>Your Cart</span>
-                  <div class="qty"><span class="cart-list">{{request.session.cartdata|length}}</span></div>
-                </a>
-                <div class="cart-dropdown">
-                  <div class="cart-list">
-                    <div class="product-widget">
-                      <div class="product-img">
-                        <img src="./img/product01.png" alt="">
+        <!-- top-area Start -->
+        <div class="top-area">
+          <div class="header-area">
+            <!-- Start Navigation -->
+              <nav class="navbar navbar-default bootsnav  navbar-sticky navbar-scrollspy"  data-minus-value-desktop="70" data-minus-value-mobile="55" data-speed="1000">
+  
+                  <!-- Start Top Search -->
+                  <div class="top-search">
+                      <div class="container">
+                          <div class="input-group">
+                              <span class="input-group-addon"><i class="fa fa-search"></i></span>
+                              <input type="text" class="form-control" placeholder="Search">
+                              <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
+                          </div>
                       </div>
-                      <div class="product-body">
-                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                        <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                      </div>
-                      <button class="delete"><i class="fa fa-close"></i></button>
-                    </div>
-
-                    <div class="product-widget">
-                      <div class="product-img">
-                        <img src="./img/product02.png" alt="">
-                      </div>
-                      <div class="product-body">
-                        <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                        <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                      </div>
-                      <button class="delete"><i class="fa fa-close"></i></button>
-                    </div>
                   </div>
-                  <div class="cart-summary">
-                    <small>3 Item(s) selected</small>
-                    <h5>SUBTOTAL: $2940.00</h5>
-                  </div>
-                  <div class="cart-btns">
-                    <a href="/cart">View Cart</a>
-                    <a href="/checkout">Checkout <i class="fa fa-arrow-circle-right"></i></a>
-                  </div>
-                </div>
-              </div>
-              <!-- /Cart -->
+                  <!-- End Top Search -->
+  
+                  <div class="container">            
+                      <!-- Start Atribute Navigation -->
+                      <div class="attr-nav">
+                          <ul>
+                            <li class="search" action="/search">
+                    
+                                <!-- <input name="q" class="input input-select" placeholder="Search here..."> -->
+                                <!-- <button type="submit" class="search-btn">Search</button> -->
+                            
+                              <a href="#"><span class="lnr lnr-magnifier"></span></a>
+                            </li><!--/.search-->
 
-              <!-- Menu Toogle -->
-              <div class="menu-toggle">
-                <a href="#">
-                  <i class="fa fa-bars"></i>
-                  <span>Menu</span>
-                </a>
-              </div>
-              <!-- /Menu Toogle -->
-            </div>
-          </div>
-          <!-- /ACCOUNT -->
-        </div>
-        <!-- row -->
-      </div>
-      <!-- container -->
-    </div>
-    <!-- /MAIN HEADER -->
-  </header>
-  <!-- /HEADER -->
+                              <li class="dropdown">
+                                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" >
+                                    <span class="lnr lnr-cart"></span>
+                                  </a>  
+                              </li><!--/.dropdown-->
+                              <li>
+                                <a href="#">
+                                  <i class="lnr lnr-heart"></i>
+                                </a>
+                              </li>
+                            <!-- <li><a href="#"><i class="fa fa-dollar"></i> USD</a></li> -->
+                            {% if user.is_authenticated %}
+                            <li><a href="{% url 'logout' %}"><i class="nav-setting"></i> Logout</a></li>
+                            <li><a href="{% url 'my_dashboard' %}"><i class="nav-setting"></i> My Dashboard</a></li>
+                            {% else %}
+                            <li><a href="{% url 'login' %}"><i class="nav-setting"></i> Login</a></li>
+                  
+                            <li><a href="{% url 'signup' %}"><i class="nav-setting"></i> Sign Up</a></li>
+                            {% endif %}
+                          </ul>
+                          
+                      </div><!--/.attr-nav-->
+                      <!-- End Atribute Navigation -->
+  
+                      <!-- Start Header Navigation -->
+                      <div class="navbar-header">
+                          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-menu">
+                              <i class="fa fa-bars"></i>
+                          </button>
+                          <a class="navbar-brand" href="/">Royal Sleep Mattress</a>
+  
+                      </div><!--/.navbar-header-->
+                      <!-- End Header Navigation -->
+                       
+                      <!-- Collect the nav links, forms, and other content for toggling -->
+                      <div class="collapse navbar-collapse menu-ui-design" id="navbar-menu">
+                          <ul class="nav navbar-nav navbar-center" data-in="fadeInDown" data-out="fadeOutUp">
+                            <li><a href="/">Home</a></li>
+                            <li><a href="/products">Products</a></li>
+                              <li class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                                  aria-expanded="false">Categories <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                    
+                                  {% for category in categories %}
+                                  <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
+                                  {% endfor %}
+                    
+                                </ul>
+                              </li>
+                    
+                             <li><a href="/about">About Us</a></li>
+                            <li><a href="/contact">Contact Us</a></li>
+                          </ul><!--/.nav -->
+                      </div><!-- /.navbar-collapse -->
+                      
+                  </div><!--/.container-->
+              </nav><!--/nav-->
+              <!-- End Navigation -->
+          </div><!--/.header-area-->
+            <div class="clearfix"></div>
+  
+        </div><!-- /.top-area-->
+        <!-- top-area End -->
 
-  <!-- NAVIGATION -->
-  <nav id="navigation" class="navbar navbar-default" style="margin-bottom:2px">
-    <!-- container -->
-    <div class="container">
-      <!-- responsive-nav -->
-      <div id="responsive-nav">
-        <!-- NAV -->
-        <ul class="main-nav nav navbar-nav">
-          <li class=""><a href="/">Home</a></li>
-
-          <li><a href="/products">Products</a></li>
-
-
-
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-              aria-expanded="false">Categories <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-
-              {% for category in categories %}
-              <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
-              {% endfor %}
-
-            </ul>
-          </li>
-
-
-          <li><a href="/checkout">Checkout</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-          <!-- <li><a href="#">Accessories</a></li> -->
-        </ul>
-        <!-- /NAV -->
-      </div>
-      <!-- /responsive-nav -->
-    </div>
-    <!-- /container -->
-  </nav>
-  <!-- /NAVIGATION -->
-
-
-  <!-- <header class="">
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <a class="navbar-brand" href="/">
-          <h2>Online Store <em>Website</em></h2>
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive"
-          aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="/">Home
-                <span class="sr-only">(current)</span>
-              </a>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="/products">Products</a></li>
-
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true"
-                aria-expanded="false">Categories</a>
-
-              <div class="dropdown-menu">
-                {% for category in categories %}
-                <a class="dropdown-item" href="/category-product-list/{{category.id}}">{{category.title}}</a>
-                {% endfor %}
-              </div>
-            </li>
-
-            <li class="nav-item"><a class="nav-link" href="/checkout">Checkout</a></li>
-
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header> -->
-
-
+      </header><!--/.welcome-hero-->
+  
   {% block content %}
 
   {% endblock content %}
-
-  <!-- FOOTER -->
-  <footer id="footer">
-    <!-- top footer -->
-    <div class="section">
-      <!-- container -->
-      <div class="container">
-        <!-- row -->
-        <div class="row">
-          <div class="col-md-4 col-xs-6">
-            <div class="footer">
-              <h3 class="footer-title">Contact Us</h3>
-
-              <ul class="footer-links">
-                <li><a href="#"><i class="fa fa-map-marker"></i>Montreal, Canada</a></li>
-                <li><a href="#"><i class="fa fa-phone"></i>+1 1234 567 890</a></li>
-                <li><a href="#"><i class="fa fa-envelope-o"></i>company.@gmail.com</a></li>
-              </ul>
+    
+		
+      <!--newsletter strat -->
+      <section id="newsletter"  class="newsletter">
+        <div class="container">
+          <div class="hm-footer-details">
+            <div class="row">
+              <div class=" col-md-3 col-sm-6 col-xs-12">
+                <div class="hm-footer-widget">
+                  <div class="hm-foot-title">
+                    <h4>information</h4>
+                  </div><!--/.hm-foot-title-->
+                  <div class="hm-foot-menu">
+                    <ul>
+                      <li><a href="/about">about us</a></li><!--/li-->
+                      <li><a href="/contact">contact us</a></li><!--/li-->
+                   
+                    </ul><!--/ul-->
+                  </div><!--/.hm-foot-menu-->
+                </div><!--/.hm-footer-widget-->
+              </div><!--/.col-->
+              <div class=" col-md-3 col-sm-6 col-xs-12">
+                <div class="hm-footer-widget">
+                  <div class="hm-foot-title">
+                    <h4>collections</h4>
+                  </div><!--/.hm-foot-title-->
+                  <div class="hm-foot-menu">
+                    <ul>
+                      <li><a href="#">Full Size</a></li><!--/li-->
+                      <li><a href="#">royal cloth sofa</a></li><!--/li-->
+                      <li><a href="#">accent chair</a></li><!--/li-->
+                      <li><a href="#">bed</a></li><!--/li-->
+                      <li><a href="#">hanging lamp</a></li><!--/li-->
+                    </ul><!--/ul-->
+                  </div><!--/.hm-foot-menu-->
+                </div><!--/.hm-footer-widget-->
+              </div><!--/.col-->
+              <div class=" col-md-3 col-sm-6 col-xs-12">
+                <div class="hm-footer-widget">
+                  <div class="hm-foot-title">
+                    <h4>my accounts</h4>
+                  </div><!--/.hm-foot-title-->
+                  <div class="hm-foot-menu">
+                    <ul>
+                      <li><a href="#">my account</a></li><!--/li-->
+                      <li><a href="#">wishlist</a></li><!--/li-->
+                      <li><a href="#">Community</a></li><!--/li-->
+                      <li><a href="#">order history</a></li><!--/li-->
+                      <li><a href="#">my cart</a></li><!--/li-->
+                    </ul><!--/ul-->
+                  </div><!--/.hm-foot-menu-->
+                </div><!--/.hm-footer-widget-->
+              </div><!--/.col-->
+              <div class=" col-md-3 col-sm-6  col-xs-12">
+                <div class="hm-footer-widget">
+                  <div class="hm-foot-title">
+                    <h4>newsletter</h4>
+                  </div><!--/.hm-foot-title-->
+                  <div class="hm-foot-para">
+                    <p>
+                      Subscribe  to get latest news,update and information.
+                    </p>
+                  </div><!--/.hm-foot-para-->
+                  <div class="hm-foot-email">
+                    <div class="foot-email-box">
+                      <input type="text" class="form-control" placeholder="Enter Email Here....">
+                    </div><!--/.foot-email-box-->
+                    <div class="foot-email-subscribe">
+                      <span><i class="fa fa-location-arrow"></i></span>
+                    </div><!--/.foot-email-icon-->
+                  </div><!--/.hm-foot-email-->
+                </div><!--/.hm-footer-widget-->
+              </div><!--/.col-->
+            </div><!--/.row-->
+          </div><!--/.hm-footer-details-->
+  
+        </div><!--/.container-->
+  
+      </section><!--/newsletter-->	
+      <!--newsletter end -->
+  
+      <!--footer start-->
+      <footer id="footer"  class="footer">
+        <div class="container">
+          <div class="hm-footer-copyright text-center">
+            <div class="footer-social">
+              <a href="#"><i class="fa fa-facebook"></i></a>	
+              <a href="#"><i class="fa fa-instagram"></i></a>
+              <a href="#"><i class="fa fa-linkedin"></i></a>
+             
             </div>
+            <p>
+              <a href="http://xenontechnologylab.com/">&copy;copyright. designed and developed by <span>Xenon</span></a>
+            </p><!--/p-->
+          </div><!--/.text-center-->
+        </div><!--/.container-->
+  
+        <div id="scroll-Top">
+          <div class="return-to-top">
+            <i class="fa fa-angle-up " id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
           </div>
-
-          <div class="col-md-4 col-xs-6">
-            <div class="footer">
-              <h3 class="footer-title">Categories</h3>
-              <ul class="footer-links">
-                {% for category in categories %}
-                <li><a href="/category-product-list/{{category.id}}">{{category.title}}</a></li>
-                {% endfor %}
-
-              </ul>
-            </div>
-          </div>
-
-
-          <div class="clearfix visible-xs"></div>
-
-          <div class="col-md-4 col-xs-6">
-            <div class="footer">
-              <h3 class="footer-title">Information</h3>
-              <ul class="footer-links">
-                <!-- <li><a href="#">About Us</a></li> -->
-                <li><a href="/contact">Contact Us</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Orders and Returns</a></li>
-                <li><a href="#">Terms & Conditions</a></li>
-              </ul>
-            </div>
-          </div>
-
-
-        </div>
-        <!-- /row -->
-      </div>
-      <!-- /container -->
-    </div>
-    <!-- /top footer -->
+          
+        </div><!--/.scroll-Top-->
+        
+          </footer><!--/.footer-->
+      <!--footer end-->
+      
+      <!-- Include all js compiled plugins (below), or include individual files as needed -->
+  
+      <script src="{% static 'assets/js/jquery.js' %}"></script>
+      
+          <!--modernizr.min.js-->
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+      
+      <!--bootstrap.min.js-->
+          <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
+          
+      <!-- bootsnav js -->
+      <script src="{% static 'assets/js/bootsnav.js' %}"></script>
+      
+      <!--owl.carousel.js-->
+          <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+          
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+      
+          
+          <!--Custom JS-->
+          <script src="{% static 'assets/js/custom.js' %}"></script>
 
 
-  </footer>
-  <!-- /FOOTER -->
+          
 
-
-  <!-- <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="inner-content">
-            <p>Copyright © 2020 Company Name - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer> -->
-
-
-  <!-- Bootstrap core JavaScript -->
-  <!-- <script src="{% static 'vendor/jquery/jquery.min.js' %}"></script>
-  <script src="{% static 'vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script> -->
-
-  <!-- bootstrap  -->
-
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
-    integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
-    crossorigin="anonymous"></script>
-
-
-
-  <!-- Include all js compiled plugins (below), or include individual files as needed -->
-
-  <script src="{% static 'assets/js/jquery.js' %}"></script>
-  <script src="{% static 'assets/js/jquery.zoom.min.js' %}"></script>
-
-  <!--modernizr.min.js-->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-
-  <!--bootstrap.min.js-->
-  <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-
-  <!-- bootsnav js -->
-  <script src="{% static 'assets/js/bootsnav.js' %}"></script>
-
-  <!--owl.carousel.js-->
-  <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-
-  <script>
-    var maxPrice = '{{minMaxPrice.discount_price__max}}'
-    var minPrice = '{{minMaxPrice.discount_price__min}}'
-  </script>
-
-  <!-- Additional Scripts -->
-  <script src="{% static 'assets/js/custom.js' %}"></script>
-  <script src="{% static 'assets/js/owl.js' %}"></script>
-
-
-  <script src="{% static 'assets/js/slick.min.js' %}"></script>
-
-
-
-  <!--Custom JS-->
-  <script src="{% static 'js/custom_demo.js' %}/"></script>
-
-  <script src="{% static 'assets/js/product-filter.js' %}"></script>
-  <script src="{% static 'assets/js/feather.min.js' %}"></script>
-
-
-
-
-  <script src="{% static 'assets/js/nouislider.min.js' %}"></script>
-
-  <script src="{% static 'assets/js/main.js' %}"></script>
-
-  <!-- cart-js -->
-  <script src="{% static 'assets/js/minicart.js' %}"></script>
-  <script>
-    toys.render();
-
-    toys.cart.on('toys_checkout', function (evt) {
-      var items, len, i;
-
-      if (this.subtotal() > 0) {
-        items = this.items();
-
-        for (i = 0, len = items.length; i < len; i++) { }
-      }
-    });
-  </script>
-  <!--// cart-js -->
-
-  <!--quantity-->
-  <script>
-    $('.value-plus').on('click', function () {
-      var divUpd = $(this).parent().find('.value'),
-        newVal = parseInt(divUpd.text(), 10) + 1;
-      divUpd.text(newVal);
-    });
-
-    $('.value-minus').on('click', function () {
-      var divUpd = $(this).parent().find('.value'),
-        newVal = parseInt(divUpd.text(), 10) - 1;
-      if (newVal >= 1) divUpd.text(newVal);
-    });
-  </script>
-  <!--quantity-->
-
-  {% block js %}
-
-  {% endblock js %}
+    
+    
 
 </body>
 
